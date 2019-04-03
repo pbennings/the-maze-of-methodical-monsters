@@ -98,11 +98,16 @@ Once we have that done and get a different error (or if you pay attention to wha
 
 ### Anything That Doesn't Kill Me
 
-Let's also have levelling up make the player deal more damage. When we calculate our attack damage to pass to the enemy, let's make it depend on a `baseAttackDamage` property we can then increment in `levelUp`. (Also, feel free to take this opportunity to clean up your code and move that calculation into a new place: the `player`'s own `calculateRawDdamage` method.) Start `baseAttackDamage` at 5, but then in `levelUp`, increment it by 20%, rounding down to avoid ugly, messy floating point numbers. Now we're cooking with gas! Boy howdy!
+Let's also have levelling up make the player deal more damage. When we calculate our attack damage to pass to the enemy, let's make it depend on a `baseAttackDamage` property we can then increment in `levelUp`. (Also, feel free to take this opportunity to clean up your code and move that calculation into a new place: the `player`'s own `calculateRawDdamage` method.) Start `baseAttackDamage` at 5, but then in `levelUp`, increment it by 20%, rounding down to avoid ugly, messy floating point numbers. 
 
 
-### Healing Swords
+### And We Have A Game!
 
-Right now, because the `level` is increasing and causing us to take less damage, it's possible for the player to take `0` damage, which is just awkward (what is the monster fighting with and why is his aim so bad with it?), or, worse yet, take negative damage, which will, the way we have it set up, actually _heal_  the player.
+Is it perfect? No! If you've gotten this far, you could now _make_ it perfect. Some suggestions below in Stretch Goals!
 
-Let's make sure that every time the player or monster takes damage, they take a minimum of 1 damage. You can use an `if` statement for this, but it's more fun to use `Math.min`, which is also generally a really useful function as is its sister function of `Math.max`. Check them out!
+
+### Stretch Goals
+
+* Right now, because the `level` is increasing and causing us to take less damage, it's possible for the player to take `0` damage, which is just awkward (what is the monster fighting with and why is his aim so bad with it?), or, worse yet, take negative damage, which will, the way we have it set up, actually _heal_  the player.
+
+    Let's make sure that every time the player or monster takes damage, they take at least 1 damage. You can use an `if` statement for this, but it's more fun to use `Math.min`, which is also generally a really useful function as is its sister function of `Math.max`. Check them out!

@@ -71,4 +71,5 @@ function updateResult() {
 
 function updateLevel() {
     document.querySelector('#level-number').innerText = player.level;
+const myObj = new Object(),
 }
